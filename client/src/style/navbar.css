@@ -1,0 +1,126 @@
+.navbar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative; /* Add position relative to .navbar */
+  }
+  
+  .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-links li a:hover {
+    color: #ddd;
+  }
+  
+  .menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    display: none; /* Hide toggle button by default */
+  }
+  
+  .menu-toggle-icon {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    position: relative;
+  }
+  
+  .menu-toggle-icon span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .menu-toggle-icon span:first-child {
+    top: 0;
+  }
+  
+  .menu-toggle-icon span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .menu-toggle-icon span:last-child {
+    bottom: 0;
+  }
+  
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    position: absolute;
+    top: 50px; /* Adjust as needed */
+    right: 20px; /* Align to the right side */
+  }
+  
+  .nav-links.active li {
+    margin: 10px 0;
+  }
+  
+  .nav-links.active li a:hover {
+    color: #ddd;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block; /* Display toggle button on smaller screens */
+    }
+  
+    .nav-links {
+      display: none; /* Hide links by default on smaller screens */
+      flex-direction: column;
+      align-items: center;
+      background-color: #333;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 1;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+    }
+  
+    .nav-links.active {
+      display: flex; /* Display links when menu is active */
+    }
+  
+    .nav-links.active li {
+      margin: 10px 0;
+    }
+  
+    .nav-links.active li a {
+      display: block; /* Ensure links are visible when menu is active */
+    }
+  }
+  

@@ -1,0 +1,61 @@
+.NoteForm {
+    width: 400px;
+    margin: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.NoteForm h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.NoteForm .NoteBody [type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 200px ;
+}
+
+.NoteForm .NoteTitle [type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #d2e5fc;
+    resize: vertical;
+    border-radius: 5px;
+}
+
+
+.NoteForm .NoteBody textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 300px; /* Set minimum height */
+}
+
+.NoteForm button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.NoteForm button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}

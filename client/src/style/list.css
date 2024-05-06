@@ -1,0 +1,30 @@
+.todo-details {
+    background-color: #f0f0f0; /* Background color */
+    padding: 20px; /* Padding around the content */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 20px; /* Spacing between todo items */
+    max-width: 400px; /* Limiting the width of the content */
+    margin-left: auto; /* Centering the content */
+    margin-right: auto; /* Centering the content */
+  }
+  
+  .todo-details .title-box {
+    background-color: #28023a; /* Highlight color for the title box */
+    padding: 10px; /* Padding for the title box */
+    border-radius: 5px; /* Rounded corners for the title box */
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .todo-details h4 {
+    color: #ffffff; /* Title color */
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+ /* Remove default margin */
+  }
+  
+  .todo-details p {
+    color: #333; /* Body text color */
+    margin: 0; /* Remove default margin for paragraphs */
+  }
+  
