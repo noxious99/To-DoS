@@ -1,6 +1,8 @@
 const express = require("express");
+require('dotenv').config();
 const mongoose = require("mongoose");
-const allroutes = require("./router/router")
+const todoRoutes = require("./router/router")
+const userRoutes = require("./router/userRoute")
 
 const app = express();
 
@@ -21,4 +23,5 @@ async function serverConnect() {
 }
 serverConnect();
 
-app.use(allroutes);
+app.use(todoRoutes);
+app.use("/user/api/", userRoutes);
