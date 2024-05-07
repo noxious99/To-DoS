@@ -3,7 +3,9 @@ const router = express.Router();
 const {
     createTodo,
     getTodo,
-    getTodos
+    getTodos,
+    deleteTodo,
+    updateTodo
 } = require("../controllers/todoControllers")
 
 router.get("/", (req, res) => {
@@ -19,6 +21,8 @@ router.get("/trending", (req, res) => {
 router.get("/list", getTodos);
 router.get("/list/:id", getTodo);
 router.post("/api/list", createTodo);
+router.delete("/api/list/:id", deleteTodo)
+router.patch("/api/list/:id", updateTodo)
 
 
 module.exports = router;

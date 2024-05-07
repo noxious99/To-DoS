@@ -12,6 +12,7 @@ const NoteForm = () => {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
     const [error, setError] = useState(null)
+    const [emptyField, setEmptyField]= useState([])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -30,11 +31,13 @@ const NoteForm = () => {
             setTitle('')
             setBody('')
             setError('')
+            setEmptyField([])
             dispatch({type: 'CREATE_TODO', payload: json})
         }
         if (!response.ok)
         {
-            setError(json.err)
+            setError(json.error)
+            setEmptyField(json.emptyField)
         }
     }
 
@@ -47,14 +50,16 @@ const NoteForm = () => {
                 placeholder='title'
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
+                className={emptyField.includes('title') ? error : ''}
                 />
             </div>
             <div className='NoteBody'>
-            <input
-                type="text"
+            <textarea
                 placeholder='Add Task!'
                 onChange={(e) => setBody(e.target.value)}
                 value={body}
+                className={emptyField.includes('body') ? error : ''}
+                rows={7}
             />
             </div>
             <button type="submit"><FontAwesomeIcon icon={faPlus} size='2x' /></button> {/* Change this line */}

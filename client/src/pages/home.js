@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import "./navbar";
 import "../style/basic.css";
 import "../style/list.css";
@@ -21,23 +21,29 @@ const Home = () => {
       }
     };
     fetch_todo();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
-      <div class="container">
-        <Navbar />
-        <h1>To-Do'S</h1>
-        <div>
+      <Navbar />
+      <h1 className="home-title">To-Do'S</h1>
+    <div className="container">
+      <div className="content">
+        <div className="left">
           <NoteForm />
         </div>
+        <div className="right">
+          <div className="list">
+            {todos &&
+              todos.map((todo) => <TodoDetails key={todo._id} todos={todo} />)}
+          </div>
+        </div>
       </div>
-      <div class="list">
-        {todos &&
-          todos.map((todos) => <TodoDetails key={todos._id} todos={todos} />)}
-      </div>
+    </div>
     </div>
   );
 };
+
+
 
 export default Home;
