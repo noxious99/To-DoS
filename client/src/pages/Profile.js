@@ -7,7 +7,7 @@ import NoteForm from "./../components/noteForm";
 import { useTodoContext } from "../context/useTodoContext";
 import { useAuthContext } from "../context/useAuthContext";
 
-const Home = () => {
+const Profile = () => {
   const { todos, dispatch } = useTodoContext();
   const { user } = useAuthContext();
   const [error, setError] = useState("");
@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     const fetch_todo = async () => {
       const response = await fetch("/api/todos/list", {
-        headers: {'Authorization': `Bearer ${user.token}`},
+        headers: { Authorization: `Bearer ${user.token}` },
       });
       const json = await response.json();
 
@@ -29,26 +29,20 @@ const Home = () => {
   }, [dispatch, user]);
 
   return (
-    <div>
-      <h1 className="home-title">To-Do'S</h1>
-      <div className="container">
-        <div className="content">
-          <div className="left">
-            <NoteForm />
-            {error}
-          </div>
-          <div className="right">
-            <div className="list">
-              {todos &&
-                todos.map((todo) => (
-                  <TodoDetails key={todo._id} todos={todo} />
-                ))}
-            </div>
-          </div>
-        </div>
+    <div className="container">
+      <div className="profile">
+        <div>{user.email}</div>
+      </div>
+      <div className="form">
+        <NoteForm />
+        {error}
+      </div>
+      <div className="list">
+        {todos &&
+          todos.map((todo) => <TodoDetails key={todo._id} todos={todo} />)}
       </div>
     </div>
   );
 };
 
-export default Home;
+export default Profile;

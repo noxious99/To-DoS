@@ -1,126 +1,94 @@
+/* General Navbar styles */
 .navbar {
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    position: relative; /* Add position relative to .navbar */
-  }
-  
-  .logo a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+}
+
+.logo img {
+  width: 150px;
+}
+
+/* Navbar links for desktop view */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a,
+.nav-links span {
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Toggle button for smaller screens */
+.menu-toggle {
+  display: none; /* Hide toggle button by default for desktop */
+}
+
+.menu-toggle-icon {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-toggle-icon span {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  display: block;
+  transition: all 0.3s;
+}
+
+.menu-toggle-icon span:nth-child(1) {
+  top: 0;
+}
+
+.menu-toggle-icon span:nth-child(2),
+.menu-toggle-icon span:nth-child(3) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Active state for smaller screens */
+.nav-links.active {
+  display: none; /* Hide links by default for smaller screens */
+}
+
+.nav-links.active a,
+.nav-links.active span {
+  margin-right: 0;
+  margin-bottom: 10px;
+  display: block; /* Display links when navbar is active */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
   .nav-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+    display: none; /* Hide links for smaller screens */
   }
-  
-  .nav-links li {
-    margin-right: 20px;
-  }
-  
-  .nav-links li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .nav-links li a:hover {
-    color: #ddd;
-  }
-  
+
   .menu-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    padding: 0;
-    display: none; /* Hide toggle button by default */
+    display: block; /* Show toggle button for smaller screens */
   }
-  
-  .menu-toggle-icon {
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    position: relative;
-  }
-  
-  .menu-toggle-icon span {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: #fff;
-    position: absolute;
-    left: 0;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .menu-toggle-icon span:first-child {
-    top: 0;
-  }
-  
-  .menu-toggle-icon span:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .menu-toggle-icon span:last-child {
-    bottom: 0;
-  }
-  
+
   .nav-links.active {
-    display: flex;
+    display: flex; /* Display links when navbar is active */
     flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
     position: absolute;
-    top: 50px; /* Adjust as needed */
-    right: 20px; /* Align to the right side */
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
-  
-  .nav-links.active li {
-    margin: 10px 0;
-  }
-  
-  .nav-links.active li a:hover {
-    color: #ddd;
-  }
-  
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block; /* Display toggle button on smaller screens */
-    }
-  
-    .nav-links {
-      display: none; /* Hide links by default on smaller screens */
-      flex-direction: column;
-      align-items: center;
-      background-color: #333;
-      padding: 20px;
-      box-sizing: border-box;
-      z-index: 1;
-      position: absolute;
-      top: 50px;
-      left: 0;
-      width: 100%;
-    }
-  
-    .nav-links.active {
-      display: flex; /* Display links when menu is active */
-    }
-  
-    .nav-links.active li {
-      margin: 10px 0;
-    }
-  
-    .nav-links.active li a {
-      display: block; /* Ensure links are visible when menu is active */
-    }
-  }
-  
+}

@@ -1,0 +1,77 @@
+.Login {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #00081a;
+    text-align: center;
+    max-width: 500px;
+  }
+  
+  .Login input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  }
+
+  .Login input:hover {
+    width: 83%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #005521;
+    border-radius: 5px;
+  }
+  
+  .Login button {
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
+    align: center
+  }
+  
+  .Login button:hover {
+    background-color: #013975;
+    width: 52%;
+  }
+  .Login button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .Login h3 {
+    color: #ffffff;
+  }
+  
+  .Login .error {
+    color: red;
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
+    border: 0.5px solid #ffffff;
+    background-color: #01174b1f;
+    border-radius: 10px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    input[type="text"] {
+      width: 100%; /* Adjust as needed */
+      max-width: 500px; /* Limit width for larger screens */
+    }
+  }

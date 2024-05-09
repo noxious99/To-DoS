@@ -20,7 +20,8 @@ const createTodo = async (req, res) => {
   }
 
   try {
-    const todo = await Todo.create({ title, body });
+    const user_id =  req.user._id
+    const todo = await Todo.create({ title, body, user_id });
     return res.status(200).json(todo);
   } catch (error) {
     return res.status(400).json({ error: error.message });
@@ -28,7 +29,8 @@ const createTodo = async (req, res) => {
 };
 
 const getTodos = async (req, res) => {
-  const todos = await Todo.find({}).sort({ createdAt: -1 });
+  const user_id = req.user._id
+  const todos = await Todo.find({user_id}).sort({ createdAt: -1 });
   res.json(todos);
 };
 

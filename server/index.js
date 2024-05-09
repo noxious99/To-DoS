@@ -23,5 +23,5 @@ async function serverConnect() {
 }
 serverConnect();
 
-app.use(todoRoutes);
-app.use("/user/api/", userRoutes);
+app.use("/api/user/", userRoutes);
+app.use("/api/todos/", todoRoutes);

@@ -8,21 +8,15 @@ const {
     updateTodo
 } = require("../controllers/todoControllers")
 
-router.get("/", (req, res) => {
-  res.json({ msg: "HomePage" });
-  console.log("homepage");
-});
+const requireAuth = require("../middleware/reqAuth")
 
-router.get("/trending", (req, res) => {
-  console.log("trending page");
-  res.json({ msg: "trending file" });
-});
+router.use(requireAuth)
 
 router.get("/list", getTodos);
 router.get("/list/:id", getTodo);
-router.post("/api/list", createTodo);
-router.delete("/api/list/:id", deleteTodo)
-router.patch("/api/list/:id", updateTodo)
+router.post("/list", createTodo);
+router.delete("/list/:id", deleteTodo)
+router.patch("/list/:id", updateTodo)
 
 
 module.exports = router;
